@@ -92,12 +92,13 @@ The architecture provides:
 
 1. **Large Context Input**: Handles 1M-2M tokens, multimodal content (images, audio, video), and structured data
 2. **Smart Optimization**: Multiple processing engines for compression, deduplication, and hashing
-3. **Reference Storage**: Centralized store with metadata tracking and multi-tier storage management  
+3. **Reference Storage**: Centralized store with metadata tracking and multi-tier storage management
 4. **Fast Retrieval**: Agent cockpit with framework adapters delivering 625x faster performance
 
 **Key Performance Benefits:**
+
 - **625x Faster** serialization and retrieval
-- **49x Memory Reduction** for multi-agent scenarios  
+- **49x Memory Reduction** for multi-agent scenarios
 - **99.55% Storage Savings** through intelligent compression
 - **Zero Quality Loss** with perfect content preservation
 
@@ -808,6 +809,7 @@ dashboard.start()  # Opens interactive TUI in terminal
 ```
 
 **Dashboard Features:**
+
 - **Live Performance Metrics**: Real-time cache hit rates, compression ratios, and efficiency multipliers
 - **Compression Analytics**: Detailed breakdown of compression algorithms and space savings
 - **Cache Management**: Memory usage, eviction policies, and hit rate history
