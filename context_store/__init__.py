@@ -13,7 +13,7 @@ Key Features:
 - Zero quality degradation (validated with ROUGE metrics)
 """
 
-__version__ = "1.0.7"
+__version__ = "1.0.8"
 __author__ = "Adewale-Young Adenle"
 __email__ = "waleadenle1@gmail.com"
 
