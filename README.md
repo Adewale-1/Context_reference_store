@@ -17,6 +17,7 @@ Context Reference Store is a high-performance Python library designed to solve t
     - [Core Capabilities](#core-capabilities)
     - [Framework Integrations](#framework-integrations)
     - [Advanced Features](#advanced-features)
+  - [Architecture](#architecture)
   - [Quick Start](#quick-start)
     - [Installation](#installation)
     - [Basic Usage](#basic-usage)
@@ -81,6 +82,25 @@ Context Reference Store is a high-performance Python library designed to solve t
 - **Semantic Analysis**: Content similarity and clustering
 - **Token Optimization**: Intelligent context window management
 - **Persistent Storage**: Disk-based caching for large datasets
+
+## Architecture
+
+The Context Reference Store follows a clean, optimized workflow that transforms large context inputs into efficiently managed references:
+
+![Context Reference Store Architecture](images/enhanced_context_reference_flow.png)
+
+The architecture provides:
+
+1. **Large Context Input**: Handles 1M-2M tokens, multimodal content (images, audio, video), and structured data
+2. **Smart Optimization**: Multiple processing engines for compression, deduplication, and hashing
+3. **Reference Storage**: Centralized store with metadata tracking and multi-tier storage management  
+4. **Fast Retrieval**: Agent cockpit with framework adapters delivering 625x faster performance
+
+**Key Performance Benefits:**
+- 🚀 **625x Faster** serialization and retrieval
+- 🧠 **49x Memory Reduction** for multi-agent scenarios  
+- 💾 **99.55% Storage Savings** through intelligent compression
+- 🎯 **Zero Quality Loss** with perfect content preservation
 
 ## Quick Start
 
@@ -775,13 +795,25 @@ store = ContextReferenceStore(
 
 ### Real-time Dashboard
 
-```python
-from context_store.monitoring import TUIDashboard
+The Context Reference Store includes a beautiful terminal-based dashboard for real-time monitoring of performance metrics, compression analytics, and system health.
 
-# Launch interactive dashboard
-dashboard = TUIDashboard(store)
-dashboard.run()  # Opens in terminal
+![TUI Dashboard](images/tui_dashboard.png)
+
+```python
+from context_store.monitoring import create_dashboard
+
+# Create and launch interactive dashboard
+store = ContextReferenceStore(enable_compression=True)
+dashboard = create_dashboard(store)
+dashboard.start()  # Opens interactive TUI in terminal
 ```
+
+**Dashboard Features:**
+- **Live Performance Metrics**: Real-time cache hit rates, compression ratios, and efficiency multipliers
+- **Compression Analytics**: Detailed breakdown of compression algorithms and space savings
+- **Cache Management**: Memory usage, eviction policies, and hit rate history
+- **Interactive Navigation**: Tabbed interface with keyboard controls (←/→ arrows, Q to quit)
+- **Color-coded Alerts**: Visual indicators for performance thresholds and system health
 
 ### Performance Metrics
 

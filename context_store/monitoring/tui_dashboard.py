@@ -67,7 +67,7 @@ class TUIColors:
             return
         curses.start_color()
         curses.use_default_colors()
-        curses.init_pair(1, curses.COLOR_GREEN, -1) 
+        curses.init_pair(1, curses.COLOR_GREEN, -1)
         curses.init_pair(2, curses.COLOR_YELLOW, -1)  # Warning
         curses.init_pair(3, curses.COLOR_RED, -1)  # Error/Critical
         curses.init_pair(4, curses.COLOR_BLUE, -1)  # Info/Header
@@ -132,7 +132,7 @@ class ContextStoreTUIDashboard:
     def start(self):
         """Start the TUI dashboard."""
         if not CURSES_AVAILABLE:
-            print("❌ TUI Dashboard requires curses library")
+            print("TUI Dashboard requires curses library")
             return
 
         try:
@@ -381,12 +381,12 @@ class ContextStoreTUIDashboard:
 
     def _draw_header(self, width: int):
         """Draw the dashboard header."""
-        title = "🚀 CONTEXT REFERENCE STORE - REAL-TIME ANALYTICS DASHBOARD"
+        title = "CONTEXT REFERENCE STORE - REAL-TIME ANALYTICS DASHBOARD"
         self._draw_centered_text(0, width, title, TUIColors.BLUE, curses.A_BOLD)
 
         # Current time and status
         current_time = time.strftime("%Y-%m-%d %H:%M:%S")
-        status = f"⚡ LIVE | {current_time}"
+        status = f"LIVE | {current_time}"
         self.screen.addstr(
             1, width - len(status) - 1, status, curses.color_pair(TUIColors.CYAN)
         )
@@ -418,7 +418,7 @@ class ContextStoreTUIDashboard:
         y = start_y
 
         # Performance summary box
-        self._draw_box(y, 0, 8, width // 2 - 1, "📊 PERFORMANCE OVERVIEW")
+        self._draw_box(y, 0, 8, width // 2 - 1, "PERFORMANCE OVERVIEW")
         y_box = y + 2
 
         # Calculate total efficiency gain
@@ -457,7 +457,7 @@ class ContextStoreTUIDashboard:
         )
 
         # Compression metrics box
-        self._draw_box(y, width // 2, 8, width // 2 - 1, "⚡ COMPRESSION METRICS")
+        self._draw_box(y, width // 2, 8, width // 2 - 1, "COMPRESSION METRICS")
         y_box = y + 2
         x_box = width // 2 + 2
 
@@ -528,7 +528,7 @@ class ContextStoreTUIDashboard:
                 0,
                 min(height - 2, len(content_breakdown) + 4),
                 width,
-                "📋 CONTENT TYPE COMPRESSION PERFORMANCE",
+                "CONTENT TYPE COMPRESSION PERFORMANCE",
             )
 
             y_content = y + 2
@@ -559,7 +559,7 @@ class ContextStoreTUIDashboard:
         metrics = self.current_metrics
 
         # Cache statistics
-        self._draw_box(y, 0, 10, width, "💾 CACHE PERFORMANCE")
+        self._draw_box(y, 0, 10, width, "CACHE PERFORMANCE")
         y_content = y + 2
 
         cache_stats = self.context_store.get_cache_stats()
@@ -594,7 +594,7 @@ class ContextStoreTUIDashboard:
         """Draw memory usage and system information."""
         y = start_y
 
-        self._draw_box(y, 0, height - 2, width, "🧠 MEMORY & SYSTEM INFORMATION")
+        self._draw_box(y, 0, height - 2, width, "MEMORY & SYSTEM INFORMATION")
         y_content = y + 2
 
         # System memory info
@@ -633,7 +633,7 @@ class ContextStoreTUIDashboard:
         y = start_y
 
         self._draw_box(
-            y, 0, height - 2, width, f"🚨 ALERTS & NOTIFICATIONS ({len(self.alerts)})"
+            y, 0, height - 2, width, f"ALERTS & NOTIFICATIONS ({len(self.alerts)})"
         )
         y_content = y + 2
 
@@ -658,16 +658,16 @@ class ContextStoreTUIDashboard:
             # Color based on alert level
             if level == "critical":
                 color = TUIColors.RED
-                icon = "🔴"
+                icon = "RED"
             elif level == "warning":
                 color = TUIColors.YELLOW
-                icon = "🟡"
+                icon = "YELLOW"
             elif level == "error":
                 color = TUIColors.RED
-                icon = "❌"
+                icon = "RED"
             else:  # info
                 color = TUIColors.CYAN
-                icon = "ℹ️ "
+                icon = "INFO"
 
             alert_text = f"{timestamp} {icon} {message}"
             if len(alert_text) > width - 4:
@@ -687,7 +687,7 @@ class ContextStoreTUIDashboard:
         """Draw a loading screen when no metrics are available."""
         height, width = self.screen.getmaxyx()
 
-        loading_text = "⏳ Loading Context Reference Store metrics..."
+        loading_text = "Loading Context Reference Store metrics..."
         self._draw_centered_text(height // 2, width, loading_text, TUIColors.YELLOW)
 
         subtext = "Please wait while we collect performance data..."
@@ -827,11 +827,11 @@ def create_dashboard(
 def main():
     """Demo function to show the dashboard in action."""
     if not CONTEXT_STORE_AVAILABLE:
-        print("❌ Context Reference Store not available")
+        print("Context Reference Store not available")
         return
 
     if not CURSES_AVAILABLE:
-        print("❌ TUI Dashboard requires curses library")
+        print("TUI Dashboard requires curses library")
         return
 
     # Create a demo context store

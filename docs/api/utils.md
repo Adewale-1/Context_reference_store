@@ -30,12 +30,14 @@ compression_manager = CompressionManager()
 Compress data using specified algorithm.
 
 **Parameters:**
+
 - `data`: Data to compress
 - `algorithm`: Compression algorithm ("lz4", "gzip", "zstd")
 
 **Returns:** Compressed data bytes
 
 **Example:**
+
 ```python
 original_data = b"This is some text to compress"
 compressed = compression_manager.compress(original_data, "lz4")
@@ -47,6 +49,7 @@ print(f"Compression ratio: {len(compressed) / len(original_data):.2f}")
 Decompress data using specified algorithm.
 
 **Parameters:**
+
 - `compressed_data`: Compressed data
 - `algorithm`: Compression algorithm used
 
@@ -57,6 +60,7 @@ Decompress data using specified algorithm.
 Calculate compression ratio.
 
 **Parameters:**
+
 - `original_size`: Original data size
 - `compressed_size`: Compressed data size
 
@@ -67,11 +71,13 @@ Calculate compression ratio.
 Benchmark different compression algorithms.
 
 **Parameters:**
+
 - `data`: Test data
 
 **Returns:** Benchmark results for each algorithm
 
 **Example:**
+
 ```python
 test_data = b"Large text data for testing compression..."
 results = compression_manager.benchmark_algorithms(test_data)
@@ -85,6 +91,7 @@ for algo, metrics in results.items():
 Automatically select best compression algorithm.
 
 **Parameters:**
+
 - `data_size`: Size of data to compress
 - `compression_priority`: Priority ("speed", "ratio", "balanced")
 
@@ -109,12 +116,14 @@ serializer = SerializationManager()
 Serialize object to bytes.
 
 **Parameters:**
+
 - `obj`: Object to serialize
 - `format`: Serialization format ("pickle", "json", "msgpack")
 
 **Returns:** Serialized data bytes
 
 **Example:**
+
 ```python
 data = {"key": "value", "numbers": [1, 2, 3]}
 serialized = serializer.serialize(data, "json")
@@ -125,6 +134,7 @@ serialized = serializer.serialize(data, "json")
 Deserialize bytes to object.
 
 **Parameters:**
+
 - `data`: Serialized data
 - `format`: Serialization format used
 
@@ -135,6 +145,7 @@ Deserialize bytes to object.
 Check if object can be serialized.
 
 **Parameters:**
+
 - `obj`: Object to check
 - `format`: Target serialization format
 
@@ -145,6 +156,7 @@ Check if object can be serialized.
 Estimate serialized size without actually serializing.
 
 **Parameters:**
+
 - `obj`: Object to estimate
 - `format`: Serialization format
 
@@ -155,11 +167,13 @@ Estimate serialized size without actually serializing.
 Register custom serialization for specific types.
 
 **Parameters:**
+
 - `type_class`: Class to register serializer for
 - `serializer_func`: Function to serialize instances
 - `deserializer_func`: Function to deserialize data
 
 **Example:**
+
 ```python
 def serialize_custom_class(obj):
     return {"custom_data": obj.data}
@@ -193,11 +207,13 @@ validator = ContextValidator()
 Validate context data.
 
 **Parameters:**
+
 - `data`: Data to validate
 
 **Returns:** Tuple of (is_valid, list_of_errors)
 
 **Example:**
+
 ```python
 is_valid, errors = validator.validate_context_data({"key": "value"})
 if not is_valid:
@@ -209,6 +225,7 @@ if not is_valid:
 Validate metadata structure.
 
 **Parameters:**
+
 - `metadata`: Metadata to validate
 
 **Returns:** Tuple of (is_valid, list_of_errors)
@@ -218,6 +235,7 @@ Validate metadata structure.
 Sanitize context ID string.
 
 **Parameters:**
+
 - `context_id`: Context ID to sanitize
 
 **Returns:** Sanitized context ID
@@ -227,6 +245,7 @@ Sanitize context ID string.
 Validate context type string.
 
 **Parameters:**
+
 - `context_type`: Context type to validate
 
 **Returns:** True if valid
@@ -236,6 +255,7 @@ Validate context type string.
 Set custom validation rules.
 
 **Parameters:**
+
 - `rules`: Validation rules configuration
 
 ### `ContextTransformer`
@@ -255,6 +275,7 @@ transformer = ContextTransformer()
 Transform data to standard context format.
 
 **Parameters:**
+
 - `data`: Data to transform
 - `source_format`: Source data format
 
@@ -265,6 +286,7 @@ Transform data to standard context format.
 Extract metadata from context data.
 
 **Parameters:**
+
 - `context_data`: Context data
 
 **Returns:** Extracted metadata
@@ -274,6 +296,7 @@ Extract metadata from context data.
 Normalize text content for consistent storage.
 
 **Parameters:**
+
 - `text`: Text to normalize
 
 **Returns:** Normalized text
@@ -283,6 +306,7 @@ Normalize text content for consistent storage.
 Auto-detect content type of data.
 
 **Parameters:**
+
 - `data`: Data to analyze
 
 **Returns:** Detected content type
@@ -306,12 +330,14 @@ profiler = PerformanceProfiler()
 Profile a single operation.
 
 **Parameters:**
+
 - `operation_func`: Function to profile
 - `*args, **kwargs`: Arguments for the function
 
 **Returns:** Performance metrics
 
 **Example:**
+
 ```python
 def slow_operation():
     time.sleep(0.1)
@@ -326,6 +352,7 @@ print(f"Execution time: {metrics['execution_time_ms']:.2f}ms")
 Start profiling session.
 
 **Parameters:**
+
 - `session_name`: Name for the profiling session
 
 ##### `end_profiling_session() -> Dict[str, Any]`
@@ -339,6 +366,7 @@ End profiling session and get results.
 Profile memory usage of a function.
 
 **Parameters:**
+
 - `func`: Function to profile
 - `*args, **kwargs`: Function arguments
 
@@ -349,6 +377,7 @@ Profile memory usage of a function.
 Benchmark operation performance across different data sizes.
 
 **Parameters:**
+
 - `operation_func`: Function to benchmark
 - `data_sizes`: List of data sizes to test
 - `iterations`: Number of iterations per size
@@ -372,6 +401,7 @@ optimizer = CacheOptimizer()
 Analyze context access patterns.
 
 **Parameters:**
+
 - `access_log`: List of context IDs in access order
 
 **Returns:** Access pattern analysis
@@ -381,6 +411,7 @@ Analyze context access patterns.
 Recommend optimal cache size.
 
 **Parameters:**
+
 - `usage_stats`: Cache usage statistics
 
 **Returns:** Recommended cache size
@@ -390,6 +421,7 @@ Recommend optimal cache size.
 Recommend optimal eviction policy.
 
 **Parameters:**
+
 - `access_patterns`: Access pattern analysis
 
 **Returns:** Recommended eviction policy
@@ -399,6 +431,7 @@ Recommend optimal eviction policy.
 Calculate cache efficiency score.
 
 **Parameters:**
+
 - `hit_rate`: Cache hit rate
 - `memory_usage`: Memory usage in MB
 - `target_performance`: Target performance metrics
@@ -424,6 +457,7 @@ validator = DataValidator()
 Validate data size constraints.
 
 **Parameters:**
+
 - `data`: Data to validate
 - `max_size_bytes`: Maximum allowed size
 
@@ -434,6 +468,7 @@ Validate data size constraints.
 Validate data type.
 
 **Parameters:**
+
 - `data`: Data to validate
 - `allowed_types`: List of allowed types
 
@@ -444,6 +479,7 @@ Validate data type.
 Validate data against JSON schema.
 
 **Parameters:**
+
 - `data`: Data to validate
 - `schema`: JSON schema
 
@@ -454,6 +490,7 @@ Validate data against JSON schema.
 Sanitize input data.
 
 **Parameters:**
+
 - `data`: Data to sanitize
 - `sanitization_rules`: Custom sanitization rules
 
@@ -464,6 +501,7 @@ Sanitize input data.
 Check data for security constraints.
 
 **Parameters:**
+
 - `data`: Data to check
 
 **Returns:** Tuple of (is_safe, security_warnings)
@@ -485,6 +523,7 @@ config_validator = ConfigValidator()
 Validate context store configuration.
 
 **Parameters:**
+
 - `config`: Configuration to validate
 
 **Returns:** Tuple of (is_valid, validation_errors)
@@ -494,6 +533,7 @@ Validate context store configuration.
 Validate adapter configuration.
 
 **Parameters:**
+
 - `adapter_type`: Type of adapter
 - `config`: Configuration to validate
 
@@ -504,6 +544,7 @@ Validate adapter configuration.
 Recommend configuration optimizations.
 
 **Parameters:**
+
 - `current_config`: Current configuration
 - `usage_stats`: Usage statistics
 
@@ -528,6 +569,7 @@ debug_helper = DebugHelper()
 Enable debug logging.
 
 **Parameters:**
+
 - `level`: Logging level
 
 ##### `trace_context_operations(context_store) -> None`
@@ -535,6 +577,7 @@ Enable debug logging.
 Enable operation tracing.
 
 **Parameters:**
+
 - `context_store`: Context store instance to trace
 
 ##### `get_debug_info(context_store) -> Dict[str, Any]`
@@ -542,11 +585,13 @@ Enable operation tracing.
 Get comprehensive debug information.
 
 **Parameters:**
+
 - `context_store`: Context store instance
 
 **Returns:** Debug information
 
 **Example:**
+
 ```python
 debug_info = debug_helper.get_debug_info(store)
 print(f"Store state: {debug_info['store_state']}")
@@ -558,6 +603,7 @@ print(f"Recent operations: {debug_info['recent_operations']}")
 Diagnose potential performance issues.
 
 **Parameters:**
+
 - `context_store`: Context store instance
 
 **Returns:** List of identified issues
@@ -567,6 +613,7 @@ Diagnose potential performance issues.
 Export comprehensive debug report.
 
 **Parameters:**
+
 - `context_store`: Context store instance
 - `report_path`: Path to save report
 
@@ -575,6 +622,7 @@ Export comprehensive debug report.
 Verify data integrity.
 
 **Parameters:**
+
 - `context_store`: Context store instance
 
 **Returns:** Integrity check results
@@ -596,6 +644,7 @@ log_analyzer = LogAnalyzer()
 Parse context store log file.
 
 **Parameters:**
+
 - `log_path`: Path to log file
 
 **Returns:** List of parsed log entries
@@ -605,6 +654,7 @@ Parse context store log file.
 Analyze error patterns in logs.
 
 **Parameters:**
+
 - `log_entries`: Parsed log entries
 
 **Returns:** Error pattern analysis
@@ -614,6 +664,7 @@ Analyze error patterns in logs.
 Generate usage report from logs.
 
 **Parameters:**
+
 - `log_entries`: Parsed log entries
 - `time_range`: Time range for analysis
 
@@ -624,6 +675,7 @@ Generate usage report from logs.
 Detect anomalies in operation patterns.
 
 **Parameters:**
+
 - `log_entries`: Parsed log entries
 
 **Returns:** List of detected anomalies
@@ -649,6 +701,7 @@ from context_store.utils import (
 Generate unique context ID.
 
 **Parameters:**
+
 - `prefix`: Optional prefix for ID
 - `length`: Length of random portion
 
@@ -659,6 +712,7 @@ Generate unique context ID.
 Estimate object size in bytes.
 
 **Parameters:**
+
 - `obj`: Object to estimate
 
 **Returns:** Estimated size in bytes
@@ -668,6 +722,7 @@ Estimate object size in bytes.
 Format bytes into human-readable string.
 
 **Parameters:**
+
 - `num_bytes`: Number of bytes
 
 **Returns:** Formatted string (e.g., "1.2 MB")
@@ -677,6 +732,7 @@ Format bytes into human-readable string.
 Parse time duration string to seconds.
 
 **Parameters:**
+
 - `duration_str`: Duration string (e.g., "1h", "30m", "5s")
 
 **Returns:** Duration in seconds
@@ -686,6 +742,7 @@ Parse time duration string to seconds.
 Create hash of data.
 
 **Parameters:**
+
 - `data`: Data to hash
 - `algorithm`: Hash algorithm
 
@@ -739,13 +796,13 @@ class CustomContextProcessor:
         self.store = context_store
         self.validator = DataValidator()
         self.profiler = PerformanceProfiler()
-    
+
     def safe_store(self, data, validate=True):
         if validate:
             is_valid, errors = self.validator.validate_data_size(data)
             if not is_valid:
                 raise ValueError(f"Data validation failed: {errors}")
-        
+
         return self.profiler.profile_operation(
             self.store.store,
             data
