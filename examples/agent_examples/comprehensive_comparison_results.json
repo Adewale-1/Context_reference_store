@@ -1,0 +1,434 @@
+{
+  "basic_analysis": {
+    "duration": 0.0003578662872314453,
+    "metrics": {
+      "status": "success",
+      "agent_context": {
+        "agent_name": "basic_analysis_agent",
+        "metrics_collection_enabled": true,
+        "baseline_measurement": "Pre-Context-Reference-Store",
+        "measurement_timestamp": "2025-08-08T15:53:15.193382"
+      },
+      "performance_metrics": {
+        "session_overview": {
+          "session_start": "2025-08-08T15:53:14.199909",
+          "current_time": "2025-08-08T15:53:15.193364",
+          "session_duration_seconds": 1.1933650970458984,
+          "total_tools_executed": 3,
+          "total_execution_time": 0.0002980232238769531,
+          "average_tool_time": 9.934107462565105e-05
+        },
+        "memory_metrics": {
+          "current_usage_mb": 359.015625,
+          "peak_usage_mb": 359.015625,
+          "total_input_bytes": 1833,
+          "total_output_bytes": 413,
+          "data_throughput_ratio": 0.22531369339879978
+        },
+        "tool_performance": {
+          "analyze_text": {
+            "count": 1,
+            "total_time": 0.0002930164337158203,
+            "total_memory_delta": 0.015625,
+            "avg_time": 0.0002930164337158203,
+            "avg_memory_delta": 0.015625,
+            "max_time": 0.0002930164337158203,
+            "success_rate": 100.0,
+            "total_input_bytes": 1767,
+            "total_output_bytes": 153
+          },
+          "calculate_advanced": {
+            "count": 2,
+            "total_time": 5.0067901611328125e-06,
+            "total_memory_delta": 0.0,
+            "avg_time": 2.5033950805664062e-06,
+            "avg_memory_delta": 0.0,
+            "max_time": 3.0994415283203125e-06,
+            "success_rate": 0.0,
+            "total_input_bytes": 66,
+            "total_output_bytes": 260
+          }
+        },
+        "context_operations": {},
+        "performance_warnings": [],
+        "efficiency_metrics": {
+          "tools_per_second": 2.513899566382756,
+          "bytes_per_second": 1882.0728086985569,
+          "memory_efficiency": 1.0970761862405883e-06
+        }
+      }
+    },
+    "context_operations": 0,
+    "cache_hits": 0
+  },
+  "advanced_multi_tool": {
+    "duration": 0.003238201141357422,
+    "metrics": {
+      "status": "success",
+      "agent_context": {
+        "agent_name": "advanced_multi_tool_agent",
+        "metrics_collection_enabled": true,
+        "baseline_measurement": "Pre-Context-Reference-Store",
+        "measurement_timestamp": "2025-08-08T15:53:15.196654"
+      },
+      "performance_metrics": {
+        "session_overview": {
+          "session_start": "2025-08-08T15:53:14.204327",
+          "current_time": "2025-08-08T15:53:15.196634",
+          "session_duration_seconds": 1.1966347694396973,
+          "total_tools_executed": 5,
+          "total_execution_time": 0.0023031234741210938,
+          "average_tool_time": 0.00046062469482421875
+        },
+        "memory_metrics": {
+          "current_usage_mb": 359.75,
+          "peak_usage_mb": 359.75,
+          "total_input_bytes": 1917,
+          "total_output_bytes": 201737,
+          "data_throughput_ratio": 105.2357850808555
+        },
+        "tool_performance": {
+          "read_file_content": {
+            "count": 2,
+            "total_time": 0.0014078617095947266,
+            "total_memory_delta": 0.734375,
+            "avg_time": 0.0007039308547973633,
+            "avg_memory_delta": 0.3671875,
+            "max_time": 0.0008709430694580078,
+            "success_rate": 100.0,
+            "total_input_bytes": 84,
+            "total_output_bytes": 199762
+          },
+          "advanced_text_analysis": {
+            "count": 1,
+            "total_time": 0.0007627010345458984,
+            "total_memory_delta": 0.0,
+            "avg_time": 0.0007627010345458984,
+            "avg_memory_delta": 0.0,
+            "max_time": 0.0007627010345458984,
+            "success_rate": 100.0,
+            "total_input_bytes": 1767,
+            "total_output_bytes": 1225
+          },
+          "advanced_calculator": {
+            "count": 2,
+            "total_time": 0.00013256072998046875,
+            "total_memory_delta": 0.0,
+            "avg_time": 6.628036499023438e-05,
+            "avg_memory_delta": 0.0,
+            "max_time": 0.00010275840759277344,
+            "success_rate": 100.0,
+            "total_input_bytes": 66,
+            "total_output_bytes": 750
+          }
+        },
+        "context_operations": {},
+        "performance_warnings": [],
+        "efficiency_metrics": {
+          "tools_per_second": 4.178384355605145,
+          "bytes_per_second": 170188.937511282,
+          "memory_efficiency": 0.0005347919265291109
+        }
+      }
+    },
+    "context_operations": 0,
+    "cache_hits": 0
+  },
+  "enhanced_analysis": {
+    "duration": 0.0013802051544189453,
+    "metrics": {
+      "status": "success",
+      "agent_context": {
+        "agent_name": "context_enhanced_analysis_agent",
+        "metrics_collection_enabled": true,
+        "context_reference_store_enabled": true,
+        "baseline_comparison": "Enhanced-vs-Basic-Agent",
+        "measurement_timestamp": "2025-08-08T15:53:15.198087",
+        "context_store_version": "0.1.0"
+      },
+      "performance_metrics": {
+        "session_overview": {
+          "session_start": "2025-08-08T15:53:15.190668",
+          "current_time": "2025-08-08T15:53:15.198050",
+          "session_duration_seconds": 0.19806790351867676,
+          "total_tools_executed": 3,
+          "total_execution_time": 0.001332998275756836,
+          "average_tool_time": 0.000444332758585612
+        },
+        "memory_metrics": {
+          "current_usage_mb": 359.9375,
+          "peak_usage_mb": 359.9375,
+          "total_input_bytes": 1833,
+          "total_output_bytes": 679,
+          "data_throughput_ratio": 0.37043098745226405
+        },
+        "context_store_metrics": {
+          "total_context_operations": 2,
+          "context_stores": 1,
+          "context_retrievals": 1,
+          "cache_hit_rate": 100.0,
+          "total_serialization_time": 0.0010776519775390625,
+          "total_deserialization_time": 2.8848648071289062e-05,
+          "average_serialization_time": 0.0010776519775390625,
+          "average_deserialization_time": 2.8848648071289062e-05,
+          "storage_compression_ratio": 0.02037351443123939,
+          "original_content_bytes": 1767,
+          "stored_content_bytes": 36,
+          "storage_efficiency_percent": 97.96264855687606
+        },
+        "tool_performance": {
+          "analyze_large_text": {
+            "count": 1,
+            "total_time": 0.001322031021118164,
+            "total_memory_delta": 0.1875,
+            "avg_time": 0.001322031021118164,
+            "avg_memory_delta": 0.1875,
+            "max_time": 0.001322031021118164,
+            "success_rate": 100.0,
+            "total_input_bytes": 1767,
+            "total_output_bytes": 419,
+            "total_context_operations": 2,
+            "total_context_serialization_time": 0.0,
+            "avg_context_storage_efficiency": 0.0
+          },
+          "calculate_with_context_caching": {
+            "count": 2,
+            "total_time": 1.0967254638671875e-05,
+            "total_memory_delta": 0.0,
+            "avg_time": 5.4836273193359375e-06,
+            "avg_memory_delta": 0.0,
+            "max_time": 7.867813110351562e-06,
+            "success_rate": 0.0,
+            "total_input_bytes": 66,
+            "total_output_bytes": 260,
+            "total_context_operations": 0,
+            "total_context_serialization_time": 0.0,
+            "avg_context_storage_efficiency": 0.0
+          }
+        },
+        "performance_warnings": [],
+        "efficiency_metrics": {
+          "tools_per_second": 3.0,
+          "bytes_per_second": 2512.0,
+          "memory_efficiency": 1.7990480592876367e-06,
+          "context_operations_per_second": 2.0
+        }
+      }
+    },
+    "context_operations": 2,
+    "cache_hit_rate": 100.0
+  },
+  "enhanced_multi_tool": {
+    "duration": 0.011515140533447266,
+    "metrics": {
+      "status": "success",
+      "agent_context": {
+        "agent_name": "context_enhanced_multi_tool_agent",
+        "metrics_collection_enabled": true,
+        "context_reference_store_enabled": true,
+        "baseline_comparison": "Enhanced-vs-Advanced-Agent",
+        "measurement_timestamp": "2025-08-08T15:53:15.209640",
+        "context_store_version": "0.1.0",
+        "total_tools_available": 20
+      },
+      "performance_metrics": {
+        "session_overview": {
+          "session_start": "2025-08-08T15:53:15.192817",
+          "current_time": "2025-08-08T15:53:15.209616",
+          "session_duration_seconds": 0.20961689949035645,
+          "total_tools_executed": 5,
+          "total_execution_time": 0.010408163070678711,
+          "average_tool_time": 0.002081632614135742
+        },
+        "memory_metrics": {
+          "current_usage_mb": 370.0625,
+          "peak_usage_mb": 370.0625,
+          "total_input_bytes": 1917,
+          "total_output_bytes": 203464,
+          "data_throughput_ratio": 106.13667188315075
+        },
+        "context_store_metrics": {
+          "total_context_operations": 6,
+          "context_stores": 4,
+          "context_retrievals": 2,
+          "cache_hit_rate": 100.0,
+          "total_serialization_time": 0.007135629653930664,
+          "total_deserialization_time": 0.001445770263671875,
+          "average_serialization_time": 0.001783907413482666,
+          "average_deserialization_time": 0.0007228851318359375,
+          "storage_compression_ratio": 0.04671717171717172,
+          "original_content_bytes": 106556,
+          "stored_content_bytes": 156,
+          "storage_efficiency_percent": 95.32828282828282
+        },
+        "tool_performance": {
+          "read_file_with_context_cache": {
+            "count": 2,
+            "total_time": 0.008533000946044922,
+            "total_memory_delta": 10.0,
+            "avg_time": 0.004266500473022461,
+            "avg_memory_delta": 5.0,
+            "max_time": 0.007033109664916992,
+            "success_rate": 100.0,
+            "total_input_bytes": 84,
+            "total_output_bytes": 199982,
+            "total_context_operations": 1,
+            "total_context_serialization_time": 0.0,
+            "avg_context_storage_efficiency": 0.0,
+            "total_context_cache_hits": 1
+          },
+          "advanced_text_analysis_with_context": {
+            "count": 1,
+            "total_time": 0.0015778541564941406,
+            "total_memory_delta": 0.09375,
+            "avg_time": 0.0015778541564941406,
+            "avg_memory_delta": 0.09375,
+            "max_time": 0.0015778541564941406,
+            "success_rate": 100.0,
+            "total_input_bytes": 1767,
+            "total_output_bytes": 1802,
+            "total_context_operations": 2,
+            "total_context_serialization_time": 0.0,
+            "avg_context_storage_efficiency": 0.0,
+            "total_context_cache_hits": 0
+          },
+          "advanced_calculator_with_caching": {
+            "count": 2,
+            "total_time": 0.00029730796813964844,
+            "total_memory_delta": 0.0,
+            "avg_time": 0.00014865398406982422,
+            "avg_memory_delta": 0.0,
+            "max_time": 0.0002541542053222656,
+            "success_rate": 100.0,
+            "total_input_bytes": 66,
+            "total_output_bytes": 1680,
+            "total_context_operations": 1,
+            "total_context_serialization_time": 0.0,
+            "avg_context_storage_efficiency": 0.0,
+            "total_context_cache_hits": 1
+          }
+        },
+        "performance_warnings": [],
+        "efficiency_metrics": {
+          "tools_per_second": 5.0,
+          "bytes_per_second": 205381.0,
+          "memory_efficiency": 0.0005243395132262286,
+          "context_operations_per_second": 6.0
+        }
+      }
+    },
+    "context_operations": 6,
+    "cache_hit_rate": 100.0,
+    "storage_efficiency": 95.32828282828282,
+    "file_cache_hit": true
+  },
+  "token_manager": {
+    "cost_first": {
+      "selected_contexts": 18,
+      "total_contexts": 18,
+      "total_tokens": 207,
+      "budget_utilization": 0.02957142857142857,
+      "estimated_cost": 0.0007245,
+      "efficiency_score": 0.2586387301587302,
+      "processing_time": 0.0013761520385742188,
+      "recommendations": [
+        "Low budget utilization - consider including more contexts",
+        "Cost optimization successful - could include more context if quality is priority"
+      ]
+    },
+    "quality_first": {
+      "selected_contexts": 18,
+      "total_contexts": 18,
+      "total_tokens": 207,
+      "budget_utilization": 0.02957142857142857,
+      "estimated_cost": 0.0007245,
+      "efficiency_score": 0.2586387301587302,
+      "processing_time": 0.0003299713134765625,
+      "recommendations": [
+        "Low budget utilization - consider including more contexts",
+        "Selected contexts have low relevance - consider improving query or keywords"
+      ]
+    },
+    "balanced": {
+      "selected_contexts": 18,
+      "total_contexts": 18,
+      "total_tokens": 207,
+      "budget_utilization": 0.02957142857142857,
+      "estimated_cost": 0.0007245,
+      "efficiency_score": 0.2586387301587302,
+      "processing_time": 0.00031280517578125,
+      "recommendations": [
+        "Low budget utilization - consider including more contexts",
+        "Selected contexts have low relevance - consider improving query or keywords"
+      ]
+    },
+    "analytics": {
+      "total_optimizations": 3,
+      "total_tokens_processed": 621,
+      "average_budget_utilization": 0.02957142857142857,
+      "total_estimated_cost": 0.0021735
+    }
+  },
+  "semantic_analyzer": {
+    "total_contexts_analyzed": 10,
+    "duplicates_found": 20,
+    "clusters_created": 1,
+    "space_savings_potential": 0.8,
+    "quality_improvement_potential": 0.40069211548309897,
+    "processing_time_ms": 36.728858947753906,
+    "total_processing_time": 0.03673672676086426,
+    "recommendations": [
+      "Consider deduplicating 6 pairs of highly similar contexts",
+      "Review 9 pairs of moderately similar contexts for potential merging",
+      "Optimize 1 large clusters by using representative contexts"
+    ],
+    "similarity_matches": [
+      {
+        "context_pair": "ctx_1 \u2194 ctx_2",
+        "similarity_score": 0.9144880169838326,
+        "suggested_action": "CONSIDER_MERGE",
+        "confidence": 1.0
+      },
+      {
+        "context_pair": "ctx_1 \u2194 ctx_3",
+        "similarity_score": 0.9850451434024535,
+        "suggested_action": "MERGE_OR_DEDUPLICATE",
+        "confidence": 1.0
+      },
+      {
+        "context_pair": "ctx_1 \u2194 ctx_9",
+        "similarity_score": 0.8362254820953811,
+        "suggested_action": "MONITOR",
+        "confidence": 1.0
+      }
+    ],
+    "clusters": [
+      {
+        "cluster_id": "cluster_0",
+        "context_count": 10,
+        "semantic_theme": "context, performance, reference, store, revolutionary",
+        "quality_score": 0.5034605774154948
+      }
+    ],
+    "analyzer_stats": {
+      "total_analyses": 1,
+      "contexts_processed": 10,
+      "embeddings_computed": 10,
+      "cache_hit_rate": 0.9,
+      "duplicates_found": 20,
+      "clusters_created": 1
+    }
+  },
+  "context_store_integration": {
+    "total_contexts": 4,
+    "hit_rate": 0.3333333333333333,
+    "memory_usage_percent": 77.9,
+    "total_evictions": 0,
+    "cache_size": 0,
+    "compression_stats": {
+      "compressed_contexts": 3,
+      "space_savings_percentage": 80.44986952081995,
+      "total_space_saved_bytes": 85087
+    }
+  }
+}

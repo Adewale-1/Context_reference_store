@@ -1,0 +1,170 @@
+{
+  "total_tests": 6,
+  "total_duration": 0.8274500370025635,
+  "results": {
+    "basic_message_handling": {
+      "data": {
+        "messages_count": 5,
+        "store_time": 0.00040984153747558594,
+        "retrieve_time": 0.0004112720489501953,
+        "data_integrity": true,
+        "tool_calls_preserved": true,
+        "reference_id": "9740c976-f63b-4c75-b46b-018f6883c1fb",
+        "speedup_factor": "625x (estimated)"
+      },
+      "timestamp": "2025-08-08T16:48:20.870009",
+      "duration": 0.0032067298889160156
+    },
+    "rag_document_handling": {
+      "data": {
+        "documents_count": 3,
+        "embedding_dimensions": 384,
+        "store_time": 0.0033850669860839844,
+        "retrieve_time": 0.0007140636444091797,
+        "content_preserved": true,
+        "metadata_preserved": true,
+        "reference_id": "fee3a672-7039-48d8-baba-b0a67b396e9e"
+      },
+      "timestamp": "2025-08-08T16:48:20.874566",
+      "duration": 0.00774693489074707
+    },
+    "tool_state_management": {
+      "data": {
+        "tools_tested": 3,
+        "all_states_preserved": true,
+        "stored_references": {
+          "data_analyzer": "f9fee35a-b43f-4ecd-8fc7-edcb1ce24b84",
+          "chart_generator": "43fb0305-04f3-4470-a467-b4fa4347aabe",
+          "report_builder": "a1513728-48e0-4d6e-826a-d3e77a0b5c0e"
+        },
+        "tools": [
+          "data_analyzer",
+          "chart_generator",
+          "report_builder"
+        ]
+      },
+      "timestamp": "2025-08-08T16:48:20.874877",
+      "duration": 0.008052825927734375
+    },
+    "streaming_integration": {
+      "data": {
+        "streaming_sessions": 1,
+        "tool_states": 1,
+        "tokens_streamed": 14,
+        "session_id": "demo_streaming_session"
+      },
+      "timestamp": "2025-08-08T16:48:21.693028",
+      "duration": 0.8262059688568115
+    },
+    "multi_session_management": {
+      "data": {
+        "sessions_created": 4,
+        "total_messages": 12,
+        "sessions_data": {
+          "customer_support_001": {
+            "description": "Customer inquiry about product returns",
+            "message_count": 3,
+            "reference_id": "326a7bca-1d7d-49a3-abc0-aa5611d13aac",
+            "store_time": 0.00035881996154785156
+          },
+          "sales_call_002": {
+            "description": "Sales consultation for enterprise features",
+            "message_count": 3,
+            "reference_id": "3f098e42-2e18-46b3-98af-3169563f9d4e",
+            "store_time": 0.00013589859008789062
+          },
+          "technical_support_003": {
+            "description": "Technical issue with API integration",
+            "message_count": 3,
+            "reference_id": "94967586-e733-4124-8b08-d10325e5eaea",
+            "store_time": 0.00022077560424804688
+          },
+          "product_demo_004": {
+            "description": "Product demonstration for new users",
+            "message_count": 3,
+            "reference_id": "12499eb4-e878-4859-a0ec-e4879c1bbb8d",
+            "store_time": 0.00011110305786132812
+          }
+        },
+        "cleanup_test": false
+      },
+      "timestamp": "2025-08-08T16:48:21.694186",
+      "duration": 0.8273639678955078
+    },
+    "performance_analytics": {
+      "data": {
+        "analytics_available": true,
+        "context_store_stats": {
+          "total_contexts": 12,
+          "multimodal_contexts": 0,
+          "total_binary_objects": 0,
+          "total_binary_size_bytes": 0,
+          "disk_stored_binaries": 0,
+          "cache_size_limit": 200,
+          "hit_rate": 0.3333333333333333,
+          "total_hits": 6,
+          "total_misses": 12,
+          "total_evictions": 0,
+          "memory_pressure_evictions": 0,
+          "ttl_evictions": 0,
+          "warm_contexts": 0,
+          "eviction_policy": "lru",
+          "memory_usage_percent": 77.7
+        },
+        "adapter_performance": {
+          "messages_stored": 17,
+          "messages_retrieved": 5,
+          "avg_serialization_time": 7.217070635627297e-05,
+          "avg_deserialization_time": 8.182525634765625e-05,
+          "total_sessions": 5,
+          "active_sessions": 5
+        },
+        "feature_usage": {
+          "tool_calling_enabled": true,
+          "streaming_enabled": true,
+          "checkpointing_enabled": true,
+          "multimodal_enabled": true,
+          "active_tool_states": 2,
+          "active_streaming_handlers": 1
+        }
+      },
+      "timestamp": "2025-08-08T16:48:21.694266",
+      "duration": 0.827441930770874
+    }
+  },
+  "performance_data": {
+    "context_store_stats": {
+      "total_contexts": 12,
+      "multimodal_contexts": 0,
+      "total_binary_objects": 0,
+      "total_binary_size_bytes": 0,
+      "disk_stored_binaries": 0,
+      "cache_size_limit": 200,
+      "hit_rate": 0.3333333333333333,
+      "total_hits": 6,
+      "total_misses": 12,
+      "total_evictions": 0,
+      "memory_pressure_evictions": 0,
+      "ttl_evictions": 0,
+      "warm_contexts": 0,
+      "eviction_policy": "lru",
+      "memory_usage_percent": 77.7
+    },
+    "adapter_performance": {
+      "messages_stored": 17,
+      "messages_retrieved": 5,
+      "avg_serialization_time": 7.217070635627297e-05,
+      "avg_deserialization_time": 8.182525634765625e-05,
+      "total_sessions": 5,
+      "active_sessions": 5
+    },
+    "feature_usage": {
+      "tool_calling_enabled": true,
+      "streaming_enabled": true,
+      "checkpointing_enabled": true,
+      "multimodal_enabled": true,
+      "active_tool_states": 2,
+      "active_streaming_handlers": 1
+    }
+  }
+}

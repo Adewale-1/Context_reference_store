@@ -1,0 +1,144 @@
+{
+  "total_tests": 6,
+  "total_duration": 0.8936419486999512,
+  "results": {
+    "basic_graph_execution": {
+      "data": {
+        "error": ""
+      },
+      "timestamp": "2025-08-08T19:45:48.510798",
+      "duration": 0.014817953109741211
+    },
+    "checkpointing_features": {
+      "data": {
+        "checkpoints_created": 5,
+        "avg_save_time": 0.0010899066925048827,
+        "avg_retrieval_time": 0.0002376556396484375,
+        "total_state_size": 13843,
+        "compression_enabled": true
+      },
+      "timestamp": "2025-08-08T19:45:48.521576",
+      "duration": 0.025600910186767578
+    },
+    "multi_agent_system": {
+      "data": {
+        "agents_registered": 2,
+        "collaboration_steps": 1,
+        "shared_state_size": 461,
+        "final_state_size": 644,
+        "store_time": 0.00024127960205078125
+      },
+      "timestamp": "2025-08-08T19:45:48.540724",
+      "duration": 0.0447390079498291
+    },
+    "streaming_execution": {
+      "data": {
+        "nodes_executed": 5,
+        "checkpoints_saved": 3,
+        "execution_sessions_stored": 1,
+        "streaming_enabled": true
+      },
+      "timestamp": "2025-08-08T19:45:49.387531",
+      "duration": 0.8915507793426514
+    },
+    "subgraph_isolation": {
+      "data": {
+        "subgraphs_created": 3,
+        "isolation_verified": true,
+        "cross_communication_tested": true,
+        "parent_thread": "main_workflow_thread"
+      },
+      "timestamp": "2025-08-08T19:45:49.389306",
+      "duration": 0.8933238983154297
+    },
+    "performance_analytics": {
+      "data": {
+        "analytics_available": true,
+        "context_store_stats": {
+          "total_contexts": 13,
+          "multimodal_contexts": 0,
+          "total_binary_objects": 0,
+          "total_binary_size_bytes": 0,
+          "disk_stored_binaries": 0,
+          "cache_size_limit": 200,
+          "hit_rate": 0.5,
+          "total_hits": 13,
+          "total_misses": 13,
+          "total_evictions": 0,
+          "memory_pressure_evictions": 0,
+          "ttl_evictions": 0,
+          "warm_contexts": 0,
+          "eviction_policy": "lru",
+          "memory_usage_percent": 80.3
+        },
+        "langgraph_performance": {
+          "graphs_executed": 1,
+          "total_nodes_executed": 0,
+          "avg_serialization_time": 0.0,
+          "avg_deserialization_time": 0.0,
+          "checkpoint_operations": 0,
+          "average_state_size_bytes": 189.0,
+          "registered_agents": 2,
+          "active_subgraphs": 3
+        },
+        "feature_usage": {
+          "streaming_enabled": true,
+          "multi_agent_enabled": true,
+          "subgraph_isolation_enabled": true,
+          "state_compression_enabled": true,
+          "active_streaming_handlers": 1,
+          "compression_threshold_bytes": 10000
+        },
+        "execution_metrics_count": 1
+      },
+      "timestamp": "2025-08-08T19:45:49.389615",
+      "duration": 0.893629789352417
+    }
+  },
+  "performance_data": {
+    "context_store_stats": {
+      "total_contexts": 13,
+      "multimodal_contexts": 0,
+      "total_binary_objects": 0,
+      "total_binary_size_bytes": 0,
+      "disk_stored_binaries": 0,
+      "cache_size_limit": 200,
+      "hit_rate": 0.5,
+      "total_hits": 13,
+      "total_misses": 13,
+      "total_evictions": 0,
+      "memory_pressure_evictions": 0,
+      "ttl_evictions": 0,
+      "warm_contexts": 0,
+      "eviction_policy": "lru",
+      "memory_usage_percent": 80.3
+    },
+    "langgraph_performance": {
+      "graphs_executed": 1,
+      "total_nodes_executed": 0,
+      "avg_serialization_time": 0.0,
+      "avg_deserialization_time": 0.0,
+      "checkpoint_operations": 0,
+      "average_state_size_bytes": 189.0,
+      "registered_agents": 2,
+      "active_subgraphs": 3
+    },
+    "feature_usage": {
+      "streaming_enabled": true,
+      "multi_agent_enabled": true,
+      "subgraph_isolation_enabled": true,
+      "state_compression_enabled": true,
+      "active_streaming_handlers": 1,
+      "compression_threshold_bytes": 10000
+    },
+    "execution_metrics": {
+      "stream_exec_001": {
+        "graph_name": "streaming_demo_graph",
+        "duration": 0.846409797668457,
+        "node_executions": {},
+        "checkpoint_operations": 0,
+        "memory_usage_mb": 0.0
+      }
+    }
+  }
+}
