@@ -46,10 +46,6 @@ from context_store import (
 # Load environment variables from .env file
 load_dotenv()
 
-# =============================================================================
-# ENHANCED METRICS & PERFORMANCE MONITORING WITH CONTEXT STORE TRACKING
-# =============================================================================
-
 
 @dataclass
 class ContextStoreMetrics:
@@ -453,10 +449,6 @@ def enhanced_metrics_wrapper(func):
 
     return wrapper
 
-
-# =============================================================================
-# ENHANCED TOOL FUNCTIONS WITH CONTEXT REFERENCE STORE
-# =============================================================================
 
 
 @enhanced_metrics_wrapper

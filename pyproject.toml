@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "context-reference-store"
-version = "1.0.0"
+version = "1.0.5"
 description = "Efficient Large Context Window Management for AI Agents and Frameworks"
 readme = "README.md"
 license = { text = "Apache-2.0" }
@@ -16,9 +16,11 @@ keywords = [
     "context",
     "memory",
     "multimodal",
+    "adk",
     "langchain",
     "langgraph",
     "llamaindex",
+    "composio",
     "performance",
 ]
 classifiers = [
@@ -42,6 +44,7 @@ dependencies = [
 
 [project.optional-dependencies]
 # Framework integrations
+adk = ["adk-python>=0.1.0", "asyncio-throttle>=1.0.0"]
 langchain = ["langchain>=0.1.0", "langchain-core>=0.1.0"]
 langgraph = ["langgraph>=0.1.0"]
 llamaindex = ["llama-index>=0.9.0"]
@@ -74,7 +77,7 @@ docs = [
 
 # All optional dependencies
 all = [
-    "context-reference-store[langchain,langgraph,llamaindex,composio,compression,async]",
+    "context-reference-store[adk,langchain,langgraph,llamaindex,composio,compression,async]",
 ]
 
 # Complete development environment
@@ -88,7 +91,15 @@ Issues = "https://github.com/Adewale-1/Context_reference_store/issues"
 Changelog = "https://github.com/Adewale-1/Context_reference_store/blob/main/CHANGELOG.md"
 
 [tool.setuptools]
-packages = ["context_store"]
+packages = [
+    "context_store",
+    "context_store.core",
+    "context_store.adapters",
+    "context_store.monitoring",
+    "context_store.optimization",
+    "context_store.semantic",
+    "context_store.utils",
+]
 
 [tool.setuptools.package-data]
 context_store = ["py.typed"]

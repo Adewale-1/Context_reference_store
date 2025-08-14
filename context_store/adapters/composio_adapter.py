@@ -43,6 +43,10 @@ try:
 except ImportError:
     ENCRYPTION_AVAILABLE = False
 
+    class Fernet:
+        pass
+
+
 try:
     # Core Composio imports
     from composio import ComposioToolSet, App, Action

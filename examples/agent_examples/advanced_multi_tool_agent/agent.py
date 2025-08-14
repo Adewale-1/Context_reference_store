@@ -36,13 +36,7 @@ from google.adk.agents import Agent
 from google.adk.tools.tool_context import ToolContext
 from google.genai import types
 
-# Load environment variables
 load_dotenv()
-
-# =============================================================================
-# METRICS & PERFORMANCE MONITORING
-# =============================================================================
-
 
 @dataclass
 class ToolMetrics:
@@ -106,7 +100,6 @@ class MetricsCollector:
                 input_size = len(str(input_data))
             except Exception:
                 input_size = 0
-
         return {
             "tool_name": tool_name,
             "start_time": start_time,
@@ -292,7 +285,6 @@ def metrics_wrapper(func):
         measurement = _metrics_collector.start_tool_measurement(
             func.__name__, input_data
         )
-
         try:
             # Execute the function
             result = func(*args, **kwargs)
@@ -308,7 +300,6 @@ def metrics_wrapper(func):
             _metrics_collector.end_tool_measurement(
                 measurement, result, success, error_message
             )
-
             return result
 
         except Exception as e:
@@ -319,9 +310,6 @@ def metrics_wrapper(func):
     return wrapper
 
 
-# =============================================================================
-# FILE SYSTEM & DATA OPERATIONS
-# =============================================================================
 
 
 @metrics_wrapper
@@ -355,7 +343,6 @@ def read_file_content(file_path: str, tool_context: ToolContext) -> dict:
             "words": len(content.split()),
             "characters": len(content),
         }
-
         # Store in state
         if "file_operations" not in tool_context.state:
             tool_context.state["file_operations"] = []
@@ -368,7 +355,6 @@ def read_file_content(file_path: str, tool_context: ToolContext) -> dict:
                 "metadata": metadata,
             }
         )
-
         return {
             "status": "success",
             "content": content,
@@ -397,8 +383,6 @@ def write_file_content(
     """
     try:
         path = Path(file_path)
-
-        # Create directory if it doesn't exist
         path.parent.mkdir(parents=True, exist_ok=True)
 
         mode = "a" if append else "w"
@@ -487,10 +471,6 @@ def list_directory(
     except Exception as e:
         return {"status": "error", "error": str(e)}
 
-
-# =============================================================================
-# DATA ANALYSIS & PROCESSING
-# =============================================================================
 
 
 @metrics_wrapper
@@ -594,7 +574,6 @@ def analyze_csv_data(file_path: str, tool_context: ToolContext) -> dict:
                 "summary": f"{num_rows} rows, {num_columns} columns",
             }
         )
-
         return result
 
     except Exception as e:
@@ -698,9 +677,6 @@ def generate_statistical_report(
         return {"status": "error", "error": str(e)}
 
 
-# =============================================================================
-# TEXT PROCESSING & NLP
-# =============================================================================
 
 
 @metrics_wrapper
@@ -852,16 +828,11 @@ def advanced_text_analysis(text: str, tool_context: ToolContext) -> dict:
             },
             "language_patterns": patterns,
         }
-
         return result
 
     except Exception as e:
         return {"status": "error", "error": str(e)}
 
-
-# =============================================================================
-# WEB & API UTILITIES
-# =============================================================================
 
 
 @metrics_wrapper
@@ -915,7 +886,7 @@ def fetch_url_content(
                 "encoding": response.headers.get_content_charset() or "unknown",
             }
 
-            # Basic content analysis for text
+            # Content analysis for text
             if content_type == "text":
                 result["analysis"] = {
                     "lines": len(text_content.splitlines()),
@@ -932,7 +903,6 @@ def fetch_url_content(
                         else None
                     ),
                 }
-
             return result
 
     except urllib.error.URLError as e:
@@ -1008,14 +978,9 @@ def encode_decode_data(
             "input_length": len(data),
             "result_length": len(result),
         }
-
     except Exception as e:
         return {"status": "error", "error": str(e)}
 
-
-# =============================================================================
-# MATHEMATICAL & SCIENTIFIC COMPUTING
-# =============================================================================
 
 
 @metrics_wrapper
@@ -1066,11 +1031,10 @@ def advanced_calculator(expression: str, tool_context: ToolContext) -> dict:
         }
 
         # Pre-process expression for common mathematical notation
-        expression = expression.replace("^", "**")  # Power notation
+        expression = expression.replace("^", "**") 
         expression = re.sub(
             r"(\d+)([a-zA-Z])", r"\1*\2", expression
-        )  # Implicit multiplication
-
+        ) 
         # Evaluate expression
         result = eval(expression, safe_dict)
 
@@ -1220,10 +1184,6 @@ def number_theory_analysis(number: int, tool_context: ToolContext) -> dict:
     except Exception as e:
         return {"status": "error", "error": str(e)}
 
-
-# =============================================================================
-# SECURITY & VALIDATION UTILITIES
-# =============================================================================
 
 
 @metrics_wrapper
@@ -1394,7 +1354,6 @@ def validate_input(
                     "domain": parts[1],
                     "tld": parts[1].split(".")[-1] if "." in parts[1] else None,
                 }
-
         elif validation_type == "url":
             try:
                 from urllib.parse import urlparse
@@ -1409,7 +1368,6 @@ def validate_input(
                 }
             except:
                 pass
-
         elif validation_type == "credit_card":
             # Luhn algorithm check
             def luhn_check(card_num):
@@ -1447,11 +1405,6 @@ def validate_input(
         return {"status": "error", "error": str(e)}
 
 
-# =============================================================================
-# DATETIME & FORMATTING UTILITIES
-# =============================================================================
-
-
 @metrics_wrapper
 def datetime_operations(
     operation: str,
@@ -1485,14 +1438,12 @@ def datetime_operations(
                 "week_number": now.isocalendar()[1],
                 "timezone": str(now.astimezone().tzinfo),
             }
-
         elif operation == "parse":
             if not datetime_str:
                 return {
                     "status": "error",
                     "error": "datetime_str required for parse operation",
                 }
-
             parsed = datetime.datetime.strptime(datetime_str, format_str)
             result = {
                 "input": datetime_str,
@@ -1503,7 +1454,6 @@ def datetime_operations(
                 "month": parsed.strftime("%B"),
                 "is_weekend": parsed.weekday() >= 5,
             }
-
         elif operation == "timestamp":
             if datetime_str:
                 try:
@@ -1525,7 +1475,6 @@ def datetime_operations(
                 "utc": dt.utctimetuple(),
                 "local": dt.timetuple(),
             }
-
         else:
             return {"status": "error", "error": f"Unsupported operation: {operation}"}
 
@@ -1562,7 +1511,6 @@ def format_data(
                 formatted = json.dumps(parsed_from_json, indent=2, ensure_ascii=False)
             else:
                 formatted = json.dumps(data, indent=2, ensure_ascii=False)
-
         elif output_format == "table":
             rows_source = (
                 parsed_from_json if isinstance(parsed_from_json, list) else None
@@ -1596,7 +1544,6 @@ def format_data(
                 formatted = "\n".join(rows)
             else:
                 formatted = str(data)
-
         elif output_format == "csv":
             rows_source = (
                 parsed_from_json if isinstance(parsed_from_json, list) else None
@@ -1611,7 +1558,6 @@ def format_data(
                 formatted = output.getvalue()
             else:
                 formatted = str(data)
-
         else:
             return {"status": "error", "error": f"Unsupported format: {output_format}"}
 
@@ -1626,10 +1572,6 @@ def format_data(
     except Exception as e:
         return {"status": "error", "error": str(e)}
 
-
-# =============================================================================
-# SESSION & STATE MANAGEMENT
-# =============================================================================
 
 
 def get_session_analytics(tool_context: ToolContext = None) -> dict:
@@ -1658,7 +1600,6 @@ def get_session_analytics(tool_context: ToolContext = None) -> dict:
                     operation_counts[key] = count
                     total_operations += count
             except Exception:
-                # Ignore non-list or problematic entries
                 continue
 
         # File operations analysis
@@ -1672,7 +1613,6 @@ def get_session_analytics(tool_context: ToolContext = None) -> dict:
                 1 for op in file_ops if op.get("operation", "").startswith("write")
             ),
         }
-
         # Data analysis operations
         data_ops = state.get("data_analysis", []) if isinstance(state, dict) else []
         data_stats = {
@@ -1681,7 +1621,6 @@ def get_session_analytics(tool_context: ToolContext = None) -> dict:
             ),
             "files_analyzed": len(set(op.get("file", "") for op in data_ops)),
         }
-
         # Calculation history
         calculations = state.get("calculations", []) if isinstance(state, dict) else []
         calc_stats = {
@@ -1700,7 +1639,6 @@ def get_session_analytics(tool_context: ToolContext = None) -> dict:
                     session_start = str(raw_session_start)
             except Exception:
                 session_start = None
-
         session_info = {
             "total_operations": total_operations,
             "operation_breakdown": operation_counts,
@@ -1870,10 +1808,8 @@ Efficiency:
 
 Performance Warnings: {len(metrics_summary.get('performance_warnings', []))}
 """
-
         else:
             return {"status": "error", "error": f"Unsupported format: {format_type}"}
-
         return {
             "status": "success",
             "format": format_type,
@@ -1885,9 +1821,7 @@ Performance Warnings: {len(metrics_summary.get('performance_warnings', []))}
         return {"status": "error", "error": str(e)}
 
 
-# =============================================================================
-# AGENT DEFINITION
-# =============================================================================
+
 
 # Create the advanced multi-tool agent
 root_agent = Agent(

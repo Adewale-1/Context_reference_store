@@ -66,6 +66,9 @@ except ImportError:
     class BaseCallbackHandler:
         pass
 
+    class LLMResult:
+        pass
+
 
 from ..core.context_reference_store import ContextReferenceStore
 from ..core.large_context_state import LargeContextState

@@ -25,12 +25,7 @@ from google.adk.agents import Agent
 from google.adk.tools.tool_context import ToolContext
 from google.genai import types
 
-# Load environment variables from .env file
 load_dotenv()
-
-# =============================================================================
-# METRICS & PERFORMANCE MONITORING
-# =============================================================================
 
 
 @dataclass
@@ -299,11 +294,6 @@ def metrics_wrapper(func):
             raise
 
     return wrapper
-
-
-# =============================================================================
-# TOOL FUNCTIONS
-# =============================================================================
 
 
 @metrics_wrapper
