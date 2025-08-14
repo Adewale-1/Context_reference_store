@@ -3,7 +3,6 @@
 [![PyPI version](https://badge.fury.io/py/context-reference-store.svg)](https://badge.fury.io/py/context-reference-store)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Tests](https://github.com/Adewale-1/Context_reference_store/workflows/tests/badge.svg)](https://github.com/Adewale-1/Context_reference_store/actions)
 
 **Efficient Large Context Window Management for AI Agents and Frameworks**
 
@@ -97,10 +96,10 @@ The architecture provides:
 4. **Fast Retrieval**: Agent cockpit with framework adapters delivering 625x faster performance
 
 **Key Performance Benefits:**
-- 🚀 **625x Faster** serialization and retrieval
-- 🧠 **49x Memory Reduction** for multi-agent scenarios  
-- 💾 **99.55% Storage Savings** through intelligent compression
-- 🎯 **Zero Quality Loss** with perfect content preservation
+- **625x Faster** serialization and retrieval
+- **49x Memory Reduction** for multi-agent scenarios  
+- **99.55% Storage Savings** through intelligent compression
+- **Zero Quality Loss** with perfect content preservation
 
 ## Quick Start
 
